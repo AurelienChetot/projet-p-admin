@@ -2,12 +2,23 @@
 
 .content {
   background: variables.$primary-background-color;
-  padding: 150px 50px;
+  padding: 100px 50px;
   p {
     color: variables.$text-color-main;
     font-family: variables.$font-family-title;
     font-size: 1.4em;
     margin-bottom: 50px;
+  }
+}
+.logo-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 50px;
+  .img-logo {
+    border: solid 3px variables.$primary-color;
+    border-radius: 50%;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 }
 .img-text-content {
@@ -26,6 +37,7 @@
   p {
     max-width: 600px;
     text-align: center;
+    color: variables.$text-color-main;
   }
 }
 
