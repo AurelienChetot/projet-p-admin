@@ -3,6 +3,7 @@
 @use "pages/page/page.scss";
 @use "pages/page/navbar.scss";
 @use "pages/page/cardhome.scss";
+@use "pages/page/navbaradmin.scss";
 
 * {
   margin: 0;
@@ -15,4 +16,10 @@
   height: 2px;
   background-color: variables.$text-color-dark;
   width: 50%;
+}
+
+.admin-page-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
 }

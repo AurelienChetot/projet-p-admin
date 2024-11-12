@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Navbar() {
   return (
     <nav className="navbar-container">
@@ -7,7 +9,9 @@ export default function Navbar() {
       <a className="navbar-text">Événement</a>
       <a className="navbar-text">Contact</a>
       <a className="navbar-text">Connexion</a>
-      <a className="navbar-text">Admin</a>
+      <Link href="/admin">
+        <p className="navbar-text">Admin</p>
+      </Link>
     </nav>
   );
 }

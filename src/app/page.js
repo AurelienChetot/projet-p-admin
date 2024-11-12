@@ -1,6 +1,8 @@
 import Image from "next/image";
 import ImgHome from "../app/assets/image/patricia.gif";
 import Logo from "../app/assets/image/logo.png";
+import Header from "@/app/components/header";
+import Navbar from "@/app/components/navbar";
 
 // import components
 import Cardhome from "./components/cardhome";
@@ -8,6 +10,8 @@ import Cardhome from "./components/cardhome";
 export default function Home() {
   return (
     <main>
+      <Header />
+      <Navbar />
       <section className="content">
         <div className="logo-container">
           <Image

@@ -1,5 +1,3 @@
-import Header from "@/app/components/header";
-import Navbar from "@/app/components/navbar";
 import "../app/styles/global.scss";
 
 export const metadata = {
@@ -14,11 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body>
-        <Header />
-        <Navbar />
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
