@@ -1,0 +1,43 @@
+// This is your Prisma schema file, learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id         Int      @id @default(autoincrement())
+  username   String   
+  password   String
+  email      String   @unique
+  createdAt  DateTime @default(now())
+  isAdmin    Boolean  @default(false)
+}
+
+model ImageHome {
+  id         Int      @id @default(autoincrement())
+  image      Bytes
+  createdAt  DateTime @default(now())
+}
+
+model ImageSeance {
+  id         Int      @id @default(autoincrement())
+  image      Bytes
+  createdAt  DateTime @default(now())
+}
+
+model Event {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String?
+  date        DateTime
+  time        DateTime
+  eventType   String
+  location    String
+  image       Bytes
+  createdAt   DateTime @default(now())
+}
