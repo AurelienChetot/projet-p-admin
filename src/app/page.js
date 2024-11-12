@@ -1,9 +1,7 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <div>
-      <p>Coucou</p>
+      <p>1ere page.js</p>
     </div>
   );
 }
