@@ -5,8 +5,27 @@
   padding: 150px 50px;
   p {
     color: variables.$text-color-main;
-    font-size: 1.5em;
+    font-family: variables.$font-family-title;
+    font-size: 1.4em;
     margin-bottom: 50px;
+  }
+}
+.img-text-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // background-color: variables.$primary-color;
+  border-radius: 2em;
+  gap: 2em;
+  .img-home {
+    width: 400px;
+    height: auto;
+    border-radius: 5%;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  p {
+    max-width: 600px;
+    text-align: center;
   }
 }
 

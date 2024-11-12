@@ -7,6 +7,7 @@ export default function Navbar() {
       <a className="navbar-text">Événement</a>
       <a className="navbar-text">Contact</a>
       <a className="navbar-text">Admin</a>
+      <a className="navbar-text">Profil</a>
     </nav>
   );
 }
