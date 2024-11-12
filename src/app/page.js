@@ -2,6 +2,9 @@ import Image from "next/image";
 import ImgHome from "../app/assets/image/patricia.gif";
 import Logo from "../app/assets/image/logo.png";
 
+// import components
+import Cardhome from "./components/cardhome";
+
 export default function Home() {
   return (
     <main>
@@ -23,7 +26,7 @@ export default function Home() {
             width={500}
             height={500}
           />
-          <p>
+          <p className="text-home">
             Je suis ravie de vous accueillir sur mon site. En tant que
             psychopraticienne, je suis dévouée à accompagner mes clients dans
             leur cheminement personnel vers le bien-être et l'équilibre mental.{" "}
@@ -34,35 +37,7 @@ export default function Home() {
           </p>
         </div>
         <div className="border-bottom"></div>
-        <p>
-          Bataille's analysis of predialectic objectivism holds that culture is
-          used in the service of archaic, sexist perceptions of art. A number of
-          constructions concerning capitalist objectivism may be found. However,
-          the primary theme of von Ludwig's[2] model of pretextual capitalist
-          theory is the bridge between society and class. If capitalist
-          objectivism holds, we have to choose between predialectic objectivism
-          and Lacanist obscurity.
-        </p>
-
-        <p>
-          Bataille's analysis of predialectic objectivism holds that culture is
-          used in the service of archaic, sexist perceptions of art. A number of
-          constructions concerning capitalist objectivism may be found. However,
-          the primary theme of von Ludwig's[2] model of pretextual capitalist
-          theory is the bridge between society and class. If capitalist
-          objectivism holds, we have to choose between predialectic objectivism
-          and Lacanist obscurity.
-        </p>
-
-        <p>
-          Bataille's analysis of predialectic objectivism holds that culture is
-          used in the service of archaic, sexist perceptions of art. A number of
-          constructions concerning capitalist objectivism may be found. However,
-          the primary theme of von Ludwig's[2] model of pretextual capitalist
-          theory is the bridge between society and class. If capitalist
-          objectivism holds, we have to choose between predialectic objectivism
-          and Lacanist obscurity.
-        </p>
+        <Cardhome />
       </section>
     </main>
   );

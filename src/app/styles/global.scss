@@ -2,9 +2,17 @@
 @use "pages/page/header.scss";
 @use "pages/page/page.scss";
 @use "pages/page/navbar.scss";
+@use "pages/page/cardhome.scss";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.border-bottom {
+  margin: 100px auto;
+  height: 2px;
+  background-color: variables.$text-color-dark;
+  width: 50%;
 }

@@ -3,13 +3,14 @@
 .content {
   background: variables.$primary-background-color;
   padding: 100px 50px;
-  p {
+  .text-home {
     color: variables.$text-color-main;
     font-family: variables.$font-family-title;
-    font-size: 1.4em;
-    margin-bottom: 50px;
+    font-size: 1.3em;
+    line-height: 1.6em;
   }
 }
+
 .logo-container {
   display: flex;
   justify-content: center;
@@ -21,11 +22,11 @@
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2);
   }
 }
+
 .img-text-content {
   display: flex;
   align-items: center;
   justify-content: center;
-  // background-color: variables.$primary-color;
   border-radius: 2em;
   gap: 2em;
   .img-home {

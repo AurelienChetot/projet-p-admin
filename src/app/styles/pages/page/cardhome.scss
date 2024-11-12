@@ -1,0 +1,108 @@
+@use "../abstracts/variables";
+
+.text-cardhome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .title-cardhome {
+    text-align: center;
+    text-decoration: underline;
+    font-size: 2em;
+    color: variables.$secondary-color;
+    font-family: variables.$font-family-title;
+    margin-bottom: 20px;
+  }
+  .text-cardhome {
+    text-align: center;
+    max-width: 600px;
+    font-size: 1.3em;
+    line-height: 1.6em;
+    font-family: variables.$font-family-title;
+    color: variables.$text-color-dark;
+  }
+}
+
+// Card style
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 100px;
+  padding: 20px;
+  margin-top: 50px;
+}
+.card {
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card .front-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card .front-content p {
+  font-size: 32px;
+  font-weight: 700;
+  opacity: 1;
+  background: linear-gradient(
+    -45deg,
+    variables.$primary-color 0%,
+    variables.$secondary-color 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  font-family: variables.$font-family-title;
+}
+
+.card .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  background-color: variables.$primary-color;
+  color: variables.$text-color-main;
+  font-family: variables.$font-family-title;
+  padding: 20px;
+  line-height: 1.5;
+  border-radius: 5px;
+  pointer-events: none;
+  transform: translateX(-96%);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card .content .heading {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.card:hover .content {
+  transform: translateY(0);
+}
+
+.card:hover .front-content {
+  transform: translateX(-30%);
+}
+
+.card:hover .front-content p {
+  opacity: 0;
+}
