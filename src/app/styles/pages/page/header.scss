@@ -1,3 +1,5 @@
+@use "../abstracts/variables";
+
 $heroHeight: 100vh;
 
 .heroEffects {
@@ -49,14 +51,16 @@ $heroHeight: 100vh;
     opacity: 1;
   }
   h1 {
-    font-size: 5em;
+    font-family: variables.$font-family-header;
+    font-size: 8rem;
     margin-bottom: 0.1em;
-    font: 5em/1em;
+    font-weight: 100;
     color: #fff;
   }
 
   p {
     width: 60vw;
+    font-family: variables.$font-family-title;
     margin: 0 auto;
     line-height: 1.5em;
     padding: 10px 20px 0;

@@ -1,0 +1,15 @@
+@use "../abstracts/variables";
+
+.navbar-container {
+  position: sticky;
+  display: flex;
+  justify-content: space-evenly;
+  top: 0;
+  z-index: 10;
+  background-color: variables.$primary-color;
+  width: 100%;
+  padding: 30px 0;
+  .navbar-text {
+    color: variables.$text-color-main;
+  }
+}

@@ -1,6 +1,7 @@
-@import "./pages/abstracts/variables.scss";
-@import "./pages/page/header.scss";
-@import "./pages/page/page.scss";
+@use "pages/abstracts/variables.scss";
+@use "pages/page/header.scss";
+@use "pages/page/page.scss";
+@use "pages/page/navbar.scss";
 
 * {
   margin: 0;

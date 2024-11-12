@@ -1,9 +1,11 @@
+@use "../abstracts/variables";
+
 .content {
-  background: $primary-background-color;
+  background: variables.$primary-background-color;
   padding: 150px 50px;
   p {
-    color: $text-color-main;
-    font-size: 1.8em;
+    color: variables.$text-color-main;
+    font-size: 1.5em;
     margin-bottom: 50px;
   }
 }

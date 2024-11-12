@@ -1,17 +1,6 @@
-import localFont from "next/font/local";
 import Header from "@/app/components/header";
+import Navbar from "@/app/components/navbar";
 import "../app/styles/global.scss";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 
 export const metadata = {
   title: "Patricia Deias",
@@ -25,8 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
         <Header />
+        <Navbar />
         {children}
       </body>
     </html>

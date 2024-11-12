@@ -12,3 +12,20 @@ $text-color-main: #222222;
 $text-color-secondary: #555555;
 $text-color-light: #e0e0e0;
 $text-color-dark: #111111;
+
+// Police
+@font-face {
+  font-family: "GreatVibes";
+  src: url("../../../assets/fonts/GreatVibes-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto-Regular";
+  src: url("../../../assets/fonts/Roboto-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$font-family-header: "GreatVibes";
+$font-family-title: "Roboto-Regular";
