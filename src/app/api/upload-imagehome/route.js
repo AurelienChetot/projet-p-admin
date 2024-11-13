@@ -67,3 +67,27 @@ export async function POST(req) {
     });
   }
 }
+
+// Méthode DELETE
+export async function DELETE(req) {
+  try {
+    const { id } = await req.json(); // Récupère l'id de l'image a supprimer
+
+    // Supprime l'image de la bdd
+    const deletedImage = await prisma.imageHome.delete({
+      where: { id },
+    });
+
+    return new Response(
+      JSON.stringify({
+        message: "Image supprimée avec succès",
+        data: deletedImage,
+      }),
+      { status: 200, headers: { "Content-Type": "application/json" } }
+    );
+  } catch (error) {
+    return new Response("Erreur lors de la suppression de l'image", {
+      status: 500,
+    });
+  }
+}

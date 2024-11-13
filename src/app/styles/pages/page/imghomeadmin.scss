@@ -25,6 +25,7 @@
   flex-direction: column;
   align-items: center;
   overflow-y: auto;
+  position: relative;
 }
 
 .imgadmin-content {
@@ -86,4 +87,54 @@
   font-family: variables.$font-family-title;
   color: variables.$secondary-color;
   margin-bottom: 10px;
+}
+
+.button-admin-delete {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 4px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.imgadmin-upload {
+  width: 150px;
+  height: auto;
+}
+.confirmation-modal {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: variables.$font-family-title;
+  opacity: 0; /* Commence invisible */
+  animation: fadeIn 0.3s ease-in-out forwards; /* Applique l'animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.confirmation-modal button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.confirmation-modal button:hover {
+  background-color: #d32f2f;
 }

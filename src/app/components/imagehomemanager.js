@@ -3,15 +3,16 @@ import { useState, useEffect } from "react";
 export default function ImageHomeManager() {
   const [uploading, setUploading] = useState(false);
   const [image, setImage] = useState(null);
-  const [previewUrl, setPreviewUrl] = useState(null); // Pour stocker l'URL de prévisualisation
-  const [retrievedImages, setRetrievedImages] = useState([]); // tableau pour stocker les images récupérées
+  const [previewUrl, setPreviewUrl] = useState(null);
+  const [retrievedImages, setRetrievedImages] = useState([]);
+  const [showConfirmDelete, setShowConfirmDelete] = useState(false); // Etat poyur confirmer la supression
+  const [imageToDelete, setImageToDelete] = useState(null); // Image a supprimer
 
   // Gère le changement de l'image sélectionnée
   const handleImageChange = (e) => {
     const selectedImage = e.target.files[0];
     setImage(selectedImage);
 
-    // prévisualisation pour l'image ajoutée
     if (selectedImage) {
       const previewUrl = URL.createObjectURL(selectedImage);
       setPreviewUrl(previewUrl);
@@ -42,7 +43,7 @@ export default function ImageHomeManager() {
         alert("Image téléchargée avec succès !");
         setPreviewUrl(null); // Efface l'aperçu après l'upload
         setImage(null); // Réinitialise le fichier sélectionné
-        fetchImages(); // Recharge toutes les images après l'upload
+        fetchImages(); // Recharge les images après l'upload
       } else {
         const errorText = await response.text();
         alert("Erreur lors du téléchargement de l'image: " + errorText);
@@ -78,12 +79,51 @@ export default function ImageHomeManager() {
     }
   };
 
+  // Fonction pour supprimer une image
+  const deleteImage = async () => {
+    if (!imageToDelete) return;
+
+    try {
+      const response = await fetch("/api/upload-imagehome", {
+        method: "DELETE",
+        body: JSON.stringify({ id: imageToDelete }), // Envoie l'id a supprimer
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (response.ok) {
+        alert("Image supprimée avec succès !");
+        fetchImages(); // Recharge les images après suppression
+        setShowConfirmDelete(false); // Cache la boîte de confirmation
+        setImageToDelete(null); // Réinitialise l'image à supprimer
+      } else {
+        console.error("Erreur lors de la suppression de l'image");
+        alert("Erreur lors de la suppression de l'image");
+      }
+    } catch (error) {
+      console.error("Erreur lors de la suppression de l'image", error);
+    }
+  };
+
+  // Fonction pour confimrer le delete
+  const handleConfirmDelete = (id) => {
+    setImageToDelete(id); // Enregistre l'image a delete
+    setShowConfirmDelete(true); // Affiche la confirmation
+  };
+
+  const handleCancelDelete = () => {
+    setShowConfirmDelete(false); // Ferme la confirmation si "non"
+    setImageToDelete(null); // Réinitialise l'image supprimer
+  };
+
   useEffect(() => {
     fetchImages();
   }, []);
 
   return (
     <section className="section-imghomeadmin">
+      {/* upload une image  */}
       <form className="form-container" onSubmit={handleSubmit}>
         <label htmlFor="file-upload" className="custom-file-upload">
           Choisir un fichier
@@ -97,7 +137,6 @@ export default function ImageHomeManager() {
           onChange={handleImageChange}
           disabled={uploading}
         />
-        {/* Affiche un aperçu de l'image */}
         {previewUrl && (
           <div className="img-admin-preview">
             <h3>Aperçu de l'image sélectionnée :</h3>
@@ -112,23 +151,36 @@ export default function ImageHomeManager() {
           {uploading ? "Téléchargement en cours..." : "Télécharger l'image"}
         </button>
       </form>
-
-      {/* Affiche toutes les images récupérées */}
+      {/* Affichage les images de la table  */}
       {retrievedImages.length > 0 ? (
         <div className="imghomeadmin-container">
           <h3 className="img-text-download">Images téléchargées :</h3>
           <div className="imgadmin-content">
             {retrievedImages.map((image) => (
-              <div key={image.id}>
+              <div key={image.id} style={{ position: "relative" }}>
                 <img
                   src={image.url}
                   alt="Image téléchargée"
-                  style={{ width: "150px", height: "auto" }}
+                  className="imgadmin-upload"
                 />
                 <p>Date: {new Date(image.createdAt).toLocaleDateString()}</p>
+                <button
+                  onClick={() => handleConfirmDelete(image.id)} // Affiche la confirmation de supression
+                  className="button-admin-delete"
+                >
+                  X
+                </button>
               </div>
             ))}
           </div>
+          {/* Notification de confirmation de suppression */}
+          {showConfirmDelete && (
+            <div className="confirmation-modal">
+              <p>Êtes-vous sûr de vouloir supprimer cette image ?</p>
+              <button onClick={deleteImage}>Oui</button>
+              <button onClick={handleCancelDelete}>Non</button>
+            </div>
+          )}
         </div>
       ) : (
         <p>Aucune image disponible.</p>
