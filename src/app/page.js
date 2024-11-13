@@ -3,6 +3,7 @@ import ImgHome from "../app/assets/image/patricia.gif";
 import Logo from "../app/assets/image/logo.png";
 import Header from "@/app/components/header";
 import Navbar from "@/app/components/navbar";
+import Imagehome from "@/app/components/imagehome";
 
 // import components
 import Cardhome from "./components/cardhome";
@@ -42,6 +43,7 @@ export default function Home() {
         </div>
         <div className="border-bottom"></div>
         <Cardhome />
+        <Imagehome />
       </section>
     </main>
   );

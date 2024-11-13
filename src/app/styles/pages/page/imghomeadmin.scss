@@ -102,7 +102,9 @@
 }
 .imgadmin-upload {
   width: 150px;
-  height: auto;
+  height: 266px;
+  object-fit: cover;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 .confirmation-modal {
   position: absolute;
@@ -113,8 +115,8 @@
   border-radius: 10px;
   text-align: center;
   font-family: variables.$font-family-title;
-  opacity: 0; /* Commence invisible */
-  animation: fadeIn 0.3s ease-in-out forwards; /* Applique l'animation */
+  opacity: 0;
+  animation: fadeIn 0.3s ease-in-out forwards;
 }
 
 @keyframes fadeIn {
@@ -129,12 +131,13 @@
 .confirmation-modal button {
   margin: 10px;
   padding: 10px 20px;
-  background-color: #f44336;
+  background-color: variables.$primary-color;
   color: white;
   border: none;
   cursor: pointer;
+  color: variables.$text-color-main;
 }
 
 .confirmation-modal button:hover {
-  background-color: #d32f2f;
+  background-color: variables.$secondary-color;
 }

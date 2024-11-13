@@ -1,0 +1,58 @@
+@use "../abstracts/variables";
+
+.imagehome-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  //   width: 100%;
+}
+
+.title-image-home {
+  color: variables.$secondary-color;
+  font-family: variables.$font-family-title;
+  font-size: 2em;
+}
+.text-image-home {
+  color: variables.$text-color-dark;
+  font-family: variables.$font-family-title;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0 25%;
+}
+
+.carrousel-content {
+  display: flex;
+  justify-content: center;
+  background-color: variables.$primary-color;
+  width: 60%;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.carousel {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel::-webkit-scrollbar {
+  background-color: variables.$primary-color;
+  border-radius: 10px;
+  height: 15px;
+}
+.carousel::-webkit-scrollbar-thumb {
+  background-color: variables.$secondary-color;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, filter 0.3s ease;
+}
+
+.carousel-image img {
+  width: 300px;
+  height: 533px;
+  object-fit: cover;
+  border-radius: 8px;
+  scroll-snap-align: center;
+}
