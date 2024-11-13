@@ -7,7 +7,7 @@ export async function GET(req) {
   try {
     // Récupère toutes les images de la table
     const images = await prisma.imageHome.findMany({
-      orderBy: { createdAt: "desc" },
+      orderBy: { id: "asc" },
     });
 
     // Convertit chaque image en base64 pour JSON

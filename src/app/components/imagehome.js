@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 export default async function ImageHome() {
   // Récupere les images de la bdd
   const images = await prisma.imageHome.findMany({
-    orderBy: { createdAt: "desc" },
+    orderBy: { id: "asc" },
   });
 
   return (
