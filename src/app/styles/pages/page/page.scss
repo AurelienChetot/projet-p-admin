@@ -7,7 +7,7 @@
     color: variables.$text-color-main;
     font-family: variables.$font-family-title;
     font-size: 1.3em;
-    line-height: 1.6em;
+    line-height: 1.4em;
   }
 }
 
@@ -42,33 +42,34 @@
   }
 }
 
-.bouncy {
-  animation: slide 3s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275);
+.img-presentation-container {
+  display: flex;
+  justify-content: center;
+  background-color: variables.$primary-color;
+  width: 35%;
+  padding: 20px 0;
+  margin: 0 auto;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes slide {
-  0% {
-    transform: translate(0, 0px);
-    animation-timing-function: cubic-bezier(0.19, 0.28, 0.27, 1);
+.img-presentation {
+  width: 80%;
+  height: auto;
+  // object-fit: cover;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+// Media querry < 1360
+@media only screen and (max-width: 1360px) {
+  .img-text-content {
+    flex-direction: column;
   }
-  11% {
-    transform: translate(0, -25px) scaleX(0.8);
-    animation-timing-function: cubic-bezier(0.57, 0.01, 0.84, 0.5);
-  }
-  20% {
-    transform: translate(0, 0px) scaleY(0.8);
-    animation-timing-function: cubic-bezier(0.19, 0.28, 0.27, 1);
-  }
-  28% {
-    transform: translate(0, -10px);
-    animation-timing-function: cubic-bezier(0.57, 0.01, 0.84, 0.5);
-  }
-  36% {
-    transform: translate(0, 0px);
-    animation-timing-function: cubic-bezier(0.19, 0.28, 0.27, 1);
-  }
-  100% {
-    transform: translate(0, 0px);
-    animation-timing-function: cubic-bezier(0.19, 0.28, 0.27, 1);
+}
+
+// Media querry < 550
+@media only screen and (max-width: 550px) {
+  .img-text-content {
+    .img-home {
+      width: 250px;
+    }
   }
 }

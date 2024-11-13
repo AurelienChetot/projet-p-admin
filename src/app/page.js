@@ -4,6 +4,7 @@ import Logo from "../app/assets/image/logo.png";
 import Header from "@/app/components/header";
 import Navbar from "@/app/components/navbar";
 import Imagehome from "@/app/components/imagehome";
+import Presentation from "@/app/assets/image/presentation.gif";
 
 // import components
 import Cardhome from "./components/cardhome";
@@ -44,6 +45,28 @@ export default function Home() {
         <div className="border-bottom"></div>
         <Cardhome />
         <Imagehome />
+        <div className="border-bottom"></div>
+        <h3 className="title-image-home">
+          Pourquoi devriez-vous consulter un psychopraticien ?
+        </h3>
+        <p className="text-image-home">
+          Lorsque vous rencontrez des problèmes au cours de votre vie,
+          généralement vous les solutionnez par vous-même ou bien vous
+          bénéficiez du soutien de votre famille/amis. Mais parfois, vous aurez
+          besoin d’un professionnel qui bénéficie d’une formation et une
+          expérience probante pour pouvoir vous aider et surtout sur qui vous
+          pouvez compter et qui est objectif. Dans ce cas-là, vous pouvez faire
+          appel à un psychopraticien agréé.
+        </p>
+        <div className="img-presentation-container">
+          <Image
+            className="img-presentation"
+            src={Presentation}
+            alt={Presentation}
+            width={580}
+            height={350}
+          />
+        </div>
       </section>
     </main>
   );
