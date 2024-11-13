@@ -5,7 +5,7 @@ import { useState } from "react";
 import Navbar from "@/app/components/navbaradmin";
 import ImageHomeManager from "@/app/components/imagehomemanager";
 import EventManager from "@/app/components/eventmanager";
-import ImageSeanceManager from "@/app/components/imagehomemanager";
+import ImageSeanceManager from "@/app/components/imageseancemanager";
 
 export default function AdminPage() {
   const [section, setSection] = useState("image-home");
@@ -26,7 +26,7 @@ export default function AdminPage() {
   return (
     <div className="admin-page-container">
       <Navbar setSection={setSection} />
-      <div>{renderSection()} </div>
+      <section className="section-admin">{renderSection()} </section>
     </div>
   );
 }

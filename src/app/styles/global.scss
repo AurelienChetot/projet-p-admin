@@ -4,6 +4,7 @@
 @use "pages/page/navbar.scss";
 @use "pages/page/cardhome.scss";
 @use "pages/page/navbaradmin.scss";
+@use "pages/page/imghomeadmin.scss";
 
 * {
   margin: 0;
@@ -20,6 +21,6 @@
 
 .admin-page-container {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
 }
