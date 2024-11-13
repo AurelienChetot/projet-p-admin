@@ -154,7 +154,10 @@ export default function ImageHomeManager() {
       {/* Affichage les images de la table  */}
       {retrievedImages.length > 0 ? (
         <div className="imghomeadmin-container">
-          <h3 className="img-text-download">Images téléchargées :</h3>
+          <h3 className="img-text-download">
+            Images téléchargées :<br />
+            (Préférence photo portrait)
+          </h3>
           <div className="imgadmin-content">
             {retrievedImages.map((image) => (
               <div key={image.id} style={{ position: "relative" }}>

@@ -75,8 +75,9 @@
   gap: 5px;
 
   .img-preview {
-    width: auto;
-    height: 350px;
+    width: 150px;
+    height: 266px;
+    object-fit: cover;
     border: solid 1px variables.$secondary-color;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3), 0 8px 16px rgba(0, 0, 0, 0.2);
   }
@@ -87,6 +88,7 @@
   font-family: variables.$font-family-title;
   color: variables.$secondary-color;
   margin-bottom: 30px;
+  text-align: center;
 }
 
 .button-admin-delete {
